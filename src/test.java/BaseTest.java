@@ -4,7 +4,7 @@ import org.junit.Before;
 import static org.example.WebDrivers.*;
 import static site.pages.Constants.URL_SCOOTER_SITE;
 
-public class Annotation {
+public class BaseTest {
 
     @Before
     public void setUp() {

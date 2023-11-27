@@ -3,7 +3,7 @@ import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import site.pages.OrderFormPage;
 
-public class OrderFormPageTests extends Annotation {
+public class OrderFormPageTests extends BaseTest {
     @Test
     public void openOrderFormHeadButtonTest() {
         OrderFormPage orderFormPage = new OrderFormPage();

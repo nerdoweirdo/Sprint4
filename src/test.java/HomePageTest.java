@@ -3,16 +3,42 @@ import org.junit.Test;
 import site.pages.Constants;
 import site.pages.HomePage;
 
-public class HomePageTest extends Annotation {
+@RunWith(Parameterized.class)
+public class HomePageTest extends BaseTest {
 
-    @org.junit.Test
+    private final String name;
+    private final String lastName;
+    private final String city;
+    private final String metro;
+    private final String phone;
+    protected WebDriver driver;
+
+    public OrderTest(String name, String lastName, String city, String metro, String phone) {
+        this.name = name;
+        this.lastName = lastName;
+        this.city = city;
+        this.metro = metro;
+        this.phone = phone;
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] getQue() {
+        return new Object[][]{
+                {"Василий", "Петров","Москва","Черкизовская","+79515553344"},
+                {"Иван", "Петров","Москва","Сокольники","+79517775544"}
+
+
+        };
+    }
+
+    @Test
     public void checkButtonYandex() {
         HomePage homePage = new HomePage();
         Assert.assertEquals(homePage.getTitleYandexPage(), Constants.YANDEX);
 
     }
 
-    @org.junit.Test
+    @Test
     public void checkButtonScooter() {
         HomePage homePage = new HomePage();
         homePage.findUrlScooterPage();
@@ -20,87 +46,87 @@ public class HomePageTest extends Annotation {
 
     }
 
-    @org.junit.Test
+    @Test
     public void checkButtonStatusOrder() {
         HomePage homePage = new HomePage();
         homePage.findFieldOrderStatus();
     }
 
-    @org.junit.Test
+    @Test
     public void checkFootButtonOrder() {
         HomePage homePage = new HomePage();
         homePage.clickButtonOrderFoot();
     }
 
-    @org.junit.Test
+    @Test
     public void checkHeadButtonOrder() {
         HomePage homePage = new HomePage();
         homePage.clickButtonOrderHead();
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem1() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem1();
         Assert.assertEquals(homePage.getTextElementListItem1(), Constants.TEXT_LIST_ITEM1);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem2() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem2();
         Assert.assertEquals(homePage.getTextElementListItem2(), Constants.TEXT_LIST_ITEM2);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem3() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem3();
         Assert.assertEquals(homePage.getTextElementListItem3(), Constants.TEXT_LIST_ITEM3);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem4() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem4();
         Assert.assertEquals(homePage.getTextElementListItem4(), Constants.TEXT_LIST_ITEM4);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem5() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem5();
         Assert.assertEquals(homePage.getTextElementListItem5(), Constants.TEXT_LIST_ITEM5);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem6() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem6();
         Assert.assertEquals(homePage.getTextElementListItem6(), Constants.TEXT_LIST_ITEM6);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem7() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem7();
         Assert.assertEquals(homePage.getTextElementListItem7(), Constants.TEXT_LIST_ITEM7);
     }
 
-    @org.junit.Test
+    @Test
     public void checkElementListItem8() {
         HomePage homePage = new HomePage();
         homePage.getTextElementListItem8();
         Assert.assertEquals(homePage.getTextElementListItem8(), Constants.TEXT_LIST_ITEM8);
     }
 
-    @org.junit.Test
+    @Test
     public void checkButtonOrderHead() {
         HomePage homePage = new HomePage();
         homePage.clickButtonOrderHead();
     }
 
-    @org.junit.Test
+    @Test
     public void checkButtonOrderFoot() {
         HomePage homePage = new HomePage();
         homePage.clickButtonOrderFoot();
